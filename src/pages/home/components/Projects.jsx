@@ -14,7 +14,7 @@ const projects = [
   {
     title: "CCO",
     year: "2023",
-    link: "https://site.dev.cco-info.fr/",
+    link: "https://cco-info.fr/",
     message: "Un site vitrine pour une societe en informatique.",
   },
   {
