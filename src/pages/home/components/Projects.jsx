@@ -6,6 +6,12 @@ import { addCopyToClipboardToast, addToastSucces } from "../../../base/Component
 
 const projects = [
   {
+    title: "Ana Mariela Albarracin",
+    year: "2024",
+    link: "https://ana-mariela-albarracin.com/",
+    message: "Un site de gestion et de présentation des blogs.",
+  },
+  {
     title: "Philosophique",
     year: "2023",
     link: "https://philosophique.app/",
@@ -33,9 +39,9 @@ const projects = [
 
 export default function Projects({}) {
   return (
-    <Column className="h-fit py-32 max-w-4xl mx-auto px-4 space-y-20">
+    <section className="flex flex-col h-fit py-32 max-w-4xl mx-auto px-4 space-y-20">
       <Column className="space-y-10">
-        <h2 className="text-4xl lg:text-5xl text-center">Un projet en dit plus que mille mots</h2>
+        <h1 className="text-4xl lg:text-5xl text-center">Un projet en dit plus que mille mots</h1>
         <Column className="space-y-2">
           {projects.map((project) => (
             <a
@@ -112,6 +118,6 @@ export default function Projects({}) {
           </RowCenter>
         </Column>
       </Column>
-    </Column>
+    </section>
   );
 }

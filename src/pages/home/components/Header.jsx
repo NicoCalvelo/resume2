@@ -1,11 +1,11 @@
 import React from "react";
-import { ColRow, Column } from "../../../base/Layout/columns";
-import { Row } from "../../../base/Layout/rows";
 import moment from "moment";
+import { Row } from "../../../base/Layout/rows";
+import { Column } from "../../../base/Layout/columns";
 
 export default function Header({}) {
   return (
-    <ColRow className="h-screen lg:justify-center lg:space-x-10 lg:p-10 items-center">
+    <header className="flex flex-col lg:flex-row h-screen lg:justify-center lg:space-x-10 lg:p-10 items-center" role="banner">
       <div className="relative h-2/3 lg:h-4/5 p-10 lg:mx-10 lg:p-4">
         <img
           src="/images/header_01_low.png"
@@ -75,6 +75,6 @@ export default function Header({}) {
           </Row>
         </Column>
       </Column>
-    </ColRow>
+    </header>
   );
 }
