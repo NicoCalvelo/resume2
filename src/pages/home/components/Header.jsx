@@ -44,7 +44,7 @@ export default function Header({}) {
                 clipRule="evenodd"
               />
             </svg>
-            <p className="font-bold lg:text-lg">Argentine en France</p>
+            <p className="font-bold lg:text-lg">Argentin en France</p>
           </Row>
           <Row className="space-x-2">
             <svg

@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 import Header from "./components/Header";
+import Studies from "./components/Studies";
 import Projects from "./components/Projects";
-import { RowCenter } from "../../base/Layout/rows";
-import { ColRow, Column } from "../../base/Layout/columns";
+import { Column } from "../../base/Layout/columns";
 
 export default function Home() {
   useEffect(() => {
@@ -45,11 +45,12 @@ export default function Home() {
             </p>
             <p>
               Originaire d'Argentine et accueilli par l'aveyron, je poursuis mon apprentissage et mon développement
-              professionnel en France, 2023 / 2024 Bac+3 Ingénierie Web à l'ESGI Paris
+              professionnel en France.
             </p>
             <p>
-              Je fais occasionnellement du développement en tant que freelance, et je suis toujours à la recherche de
-              nouveaux projets.
+              Je me considère comme une personne curieuse, qui apprend par la pratique et utilise son expérience pour
+              relever de nouveaux défis, comme le dit un proverbe espagnol :{" "}
+              <span className="italic">"Caminante, no hay camino, se hace camino al andar"</span>.
             </p>
           </Column>
         </Column>
@@ -61,6 +62,7 @@ export default function Home() {
         />
         <div className="bg-gradient-to-b lg:hidden from-black rounded-4xl via-transparent to-black opacity-50 absolute w-full h-full z-10" />
       </section>
+      <Studies />
       <Projects />
       <footer className="flex flex-row justify-center item-scenter my-10 text-xs">
         <p className="">Conçu et développé par Nico Calvelo</p>

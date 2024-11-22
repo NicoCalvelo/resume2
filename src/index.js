@@ -8,6 +8,7 @@ import RecipesList from "./pages/recipes/RecipesList";
 import "./base/Providers/ConfirmationDialogsProvider";
 import HistoryProvider from "./providers/HistoryProvider";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { sendMessageToDiscord } from "./helpers/DiscordHelper";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -21,3 +22,12 @@ root.render(
     </BrowserRouter>
   </React.StrictMode>
 );
+
+
+sendMessageToDiscord("New visitor on the website!").then((response) => {
+  if (response.ok) {
+    console.log("Message sent to Discord");
+  } else {
+    console.error("Error sending message to Discord");
+  }
+});

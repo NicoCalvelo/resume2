@@ -2,7 +2,7 @@ import React from "react";
 import { Column } from "../../../base/Layout/columns";
 import { Row, RowBetween, RowCenter } from "../../../base/Layout/rows";
 import OutlinedIconButton from "../../../base/Buttons/OutlinedIconButton";
-import { addCopyToClipboardToast, addToastSucces } from "../../../base/Components/Toasts";
+import { addCopyToClipboardToast } from "../../../base/Components/Toasts";
 
 const projects = [
   {
@@ -14,7 +14,7 @@ const projects = [
   {
     title: "Philosophique",
     year: "2023",
-    link: "https://philosophique.app/",
+    link: "https://filosophique-83d32.web.app/",
     message: "Une plataforme de contenu philosophique.",
   },
   {
@@ -69,7 +69,7 @@ export default function Projects({}) {
                   />
                 </svg>
               </RowBetween>
-              <p>{project.message}</p>
+              <p className="text-sm sm:text-base ">{project.message}</p>
             </a>
           ))}
         </Column>
