@@ -6,7 +6,7 @@ import { Column } from "../../../base/Layout/columns";
 export default function Header({}) {
   return (
     <header className="flex flex-col lg:flex-row h-screen lg:justify-center lg:space-x-10 lg:p-10 items-center" role="banner">
-      <div className="relative h-2/3 lg:h-4/5 p-10 lg:mx-10 lg:p-4">
+      <div className="relative h-3/4 lg:h-4/5 p-10 lg:mx-10 lg:p-4">
         <img
           src="/images/header_01_low.png"
           data-src="/images/header_01.jpg"
@@ -15,20 +15,20 @@ export default function Header({}) {
         <img
           src="/images/header_02_low.png"
           data-src="/images/header_02.jpg"
-          className="h-1/3 absolute bottom-0 right-3 lg:-right-16 shadow-xl rounded-4xl"
+          className="h-1/3 absolute bottom-2 -right-4 lg:-right-16 shadow-xl rounded-4xl"
         />
         <img
           src="/images/header_04_low.png"
           data-src="/images/header_04.jpg"
-          className="h-1/4 aspect-square object-cover absolute top-0 right-2 lg:-right-10 shadow-xl rounded-4xl"
+          className="h-1/4 aspect-square object-cover absolute top-2 right-2 lg:-top-4 lg:-right-10 shadow-xl rounded-4xl"
         />
         <img
           src="/images/header_03_low.png"
           data-src="/images/header_03.jpg"
-          className="h-1/3 absolute bottom-16 left-2 lg:-left-14 shadow-xl rounded-4xl"
+          className="h-1/3 absolute bottom-16 -left-4 lg:-left-14 shadow-xl rounded-4xl"
         />
       </div>
-      <Column className="p-5 w-fit space-y-2 lg:space-y-6">
+      <Column className="p-5 pt-2 w-fit space-y-2 lg:space-y-6">
         <h1 className="lg:text-7xl">Nicolas Calvelo</h1>
         <Column className="space-y-2">
           <Row className="space-x-2">

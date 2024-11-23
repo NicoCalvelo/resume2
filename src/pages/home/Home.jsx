@@ -38,7 +38,7 @@ export default function Home() {
         />
         <Column className="absolute lg:static lg:justify-center lg:my-24 lg:border lg:border-text-color w-full p-5 z-20 text-center rounded-4xl bg-background-color space-y-10">
           <h2 className="text-4xl">Se frayer un chemin en marchant</h2>
-          <Column className="space-y-2 text-sm lg:text-base">
+          <Column className="space-y-2 text-sm lg:text-base pb-5">
             <p>
               Fortement attiré par l’industrie tech, je suis passionné par la création de solutions innovantes et la
               résolution de problèmes.
