@@ -6,24 +6,26 @@ import { Column } from "../../base/Layout/columns";
 
 export default function Home() {
   useEffect(() => {
-    document.querySelectorAll("img").forEach((img) => {
-      const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const img = entry.target;
-            const src = img.getAttribute("data-src");
+    setTimeout(() => {
+      document.querySelectorAll("img").forEach((img) => {
+        const observer = new IntersectionObserver((entries, observer) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const img = entry.target;
+              const src = img.getAttribute("data-src");
 
-            if (!src) return;
-            img.setAttribute("src", src);
-            img.onload = () => img.removeAttribute("data-src");
+              if (!src) return;
+              img.setAttribute("src", src);
+              img.onload = () => img.removeAttribute("data-src");
 
-            observer.disconnect();
-          }
+              observer.disconnect();
+            }
+          });
         });
-      });
 
-      observer.observe(img);
-    });
+        observer.observe(img);
+      });
+    }, 10);
   }, []);
 
   return (
@@ -60,7 +62,7 @@ export default function Home() {
           loading="lazy"
           className="w-full lg:max-w-sm lg:mt-48 h-screen lg:h-auto lg:m-5  rounded-b-4xl lg:rounded-4xl object-cover"
         />
-        <div className="bg-gradient-to-b lg:hidden from-black rounded-4xl via-transparent to-black opacity-50 absolute w-full h-full z-10" />
+        <div className="bg-gradient-to-b lg:hidden from-black rounded-4xl via-transparent to-black opacity-25 absolute w-full h-full z-10" />
       </section>
       <Studies />
       <Projects />

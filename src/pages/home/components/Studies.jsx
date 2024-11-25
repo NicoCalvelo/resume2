@@ -7,14 +7,14 @@ import { addCopyToClipboardToast, addToastSucces } from "../../../base/Component
 const studies = [
   {
     title: "Cycle Master à l'ESGI Toulouse",
-    year: "2024 / 2026",
+    year: " 2024 / 2026 ",
     link: "https://www.esgi.fr/programmes/ingenierie-web.html",
     message:
       "Actuellement en formation en alternance en développement web. Un cycle de deux ans pour devenir un expert en ingénierie informatique.",
   },
   {
     title: "Bac +3 Ingénierie du Web à l'ESGI Paris",
-    year: "2023 / 2024",
+    year: " 2023 / 2024 ",
     link: "https://www.esgi.fr/programmes/ingenierie-web.html",
     message:
       "Formation en alternance en développement web. Un année très enrichissante en experiences et en connaissances.",

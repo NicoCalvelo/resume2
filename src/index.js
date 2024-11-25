@@ -23,7 +23,6 @@ root.render(
   </React.StrictMode>
 );
 
-console.log(window);
 if (!window.location.origin.includes("localhost")) {
   const visitNumber = localStorage.getItem("visitNumber");
   localStorage.setItem("visitNumber", visitNumber ? parseInt(visitNumber) + 1 : 1);
