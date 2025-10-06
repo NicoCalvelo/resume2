@@ -46,7 +46,7 @@ export default function Home() {
               résolution de problèmes.
             </p>
             <p>
-              Originaire d'Argentine et accueilli par l'aveyron, je poursuis mon apprentissage et mon développement
+              Originaire d'Argentine et accueilli par l'Aveyron, je poursuis mon apprentissage et mon développement
               professionnel en France.
             </p>
             <p>

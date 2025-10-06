@@ -3,19 +3,17 @@ import moment from "moment";
 import { Row } from "../../../base/Layout/rows";
 import { Column } from "../../../base/Layout/columns";
 import { Transition, TransitionChild } from "@headlessui/react";
+import { useNavigate } from "react-router-dom";
+import GradientButton from "../../../base/Buttons/GradientButton";
 
 export default function Header({}) {
+  const navigate = useNavigate();
   return (
     <header
       className="flex flex-col lg:flex-row h-screen lg:justify-center lg:space-x-10 lg:p-10 items-center"
       role="banner"
     >
-      <Transition
-        as="div"
-        appear
-        show={true}
-        className="relative h-3/4 lg:h-4/5 p-10 lg:mx-10 lg:p-4"
-      >
+      <Transition as="div" appear show={true} className="relative h-3/4 lg:h-4/5 p-10 lg:mx-10 lg:p-4">
         <TransitionChild
           as="div"
           className="h-full mx-auto"
@@ -39,7 +37,7 @@ export default function Header({}) {
           <img
             src="/images/header_02_low.png"
             data-src="/images/header_02.jpg"
-            className="h-full w-full shadow-xl rounded-4xl"
+            className="h-full object-cover shadow-xl rounded-4xl"
           />
         </TransitionChild>
         <TransitionChild
@@ -52,7 +50,7 @@ export default function Header({}) {
           <img
             src="/images/header_04_low.png"
             data-src="/images/header_04.jpg"
-            className="aspect-square object-cover shadow-xl rounded-4xl h-full w-full"
+            className="aspect-square object-cover shadow-xl rounded-4xl h-full"
           />
         </TransitionChild>
         <TransitionChild
@@ -65,7 +63,7 @@ export default function Header({}) {
           <img
             src="/images/header_03_low.png"
             data-src="/images/header_03.jpg"
-            className="shadow-xl rounded-4xl h-full w-full"
+            className="shadow-xl object-cover rounded-4xl h-full"
           />
         </TransitionChild>
       </Transition>
@@ -114,6 +112,11 @@ export default function Header({}) {
             </svg>
             <p className="font-bold lg:text-lg">{moment().diff("2002-03-03", "years")} ans</p>
           </Row>
+          <div className="h-4" />
+          <GradientButton onClick={() => navigate("/salon-space")} hasIcon className="">
+            <span className="text-xl">🚀</span>
+            <span>Salon space Toulouse 2025</span>
+          </GradientButton>
         </Column>
       </Column>
     </header>

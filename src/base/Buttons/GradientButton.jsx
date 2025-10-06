@@ -14,7 +14,7 @@ export default function GradientButton({
       disabled={disable}
       type={type}
       className={
-        "btn bg-gradient-to-tl from-violet-600 via-indigo-500 to-indigo-800 text-secondary-on disabled:bg-opacity-60 " +
+        "btn bg-gradient-to-tl hover:shadow-lg from-violet-600 via-indigo-500 to-indigo-800 text-secondary-on disabled:bg-opacity-60 " +
         className
       }
     >

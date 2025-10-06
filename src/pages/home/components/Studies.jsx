@@ -1,8 +1,6 @@
 import React from "react";
+import { Row} from "../../../base/Layout/rows";
 import { Column } from "../../../base/Layout/columns";
-import { Row, RowBetween, RowCenter } from "../../../base/Layout/rows";
-import OutlinedIconButton from "../../../base/Buttons/OutlinedIconButton";
-import { addCopyToClipboardToast, addToastSucces } from "../../../base/Components/Toasts";
 
 const studies = [
   {
