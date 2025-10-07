@@ -88,11 +88,11 @@ export default function SalonSpace() {
       </div>
 
       {/* Navigation Dots */}
-      <div className="fixed right-8 top-1/2 transform -translate-y-1/2 z-50 space-y-4">
+      <div className="fixed right-2 sm:right-4 lg:right-8 top-1/2 transform -translate-y-1/2 z-50 space-y-2 sm:space-y-4">
         {[0, 1, 2, 3, 4, 5, 6].map((index) => (
           <div
             key={index}
-            className={`w-3 h-3 rounded-full border-2 border-white transition-all duration-300 cursor-pointer
+            className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full border border-white sm:border-2 transition-all duration-300 cursor-pointer
               ${currentSection === index ? "bg-white scale-125" : "bg-transparent hover:bg-white/50"}`}
             onClick={() => {
               const sections = document.querySelectorAll("section, header");
@@ -105,9 +105,9 @@ export default function SalonSpace() {
       {/* Content */}
       <div className="relative z-20 min-h-screen">
         {/* Hero Section */}
-        <header className="flex flex-col lg:flex-row min-h-screen justify-center items-center px-4 lg:px-10 relative">
-          {/* Floating Animation */}
-          <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <header className="flex flex-col lg:flex-row min-h-screen justify-center items-center px-4 sm:px-6 lg:px-10 py-8 lg:py-0 relative">
+          {/* Floating Animation - Hidden on mobile for performance */}
+          <div className="absolute inset-0 overflow-hidden pointer-events-none hidden sm:block">
             <div
               className="absolute top-20 left-10 w-32 h-32 bg-blue-500/10 rounded-full blur-xl animate-bounce"
               style={{ animationDelay: "0s", animationDuration: "6s" }}
@@ -123,19 +123,19 @@ export default function SalonSpace() {
           </div>
 
           <div
-            className={`flex-1 max-w-3xl transition-all duration-1000 ${
+            className={`flex-1 max-w-3xl transition-all duration-1000 mb-8 lg:mb-0 ${
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
             }`}
           >
-            <Column className="space-y-8 text-center lg:text-left  px-5">
+            <Column className="space-y-6 sm:space-y-8 text-center lg:text-left px-2 sm:px-5">
               {/* Main Title with Glitch Effect */}
               <div className="relative">
-                <h1 className="text-6xl lg:text-8xl font-black tracking-tight relative">
+                <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-black tracking-tight relative leading-tight">
                   <span className="relative inline-block">
-                    <span className="px-4 absolute inset-0 bg-gradient-to-r from-blue-200 via-purple-200 to-pink-200 bg-clip-text text-transparent animate-pulse">
+                    <span className="px-2 sm:px-4 absolute inset-0 bg-gradient-to-r from-blue-200 via-purple-200 to-pink-200 bg-clip-text text-transparent animate-pulse">
                       Nicolas Calvelo
                     </span>
-                    <span className="px-4 relative bg-gradient-to-r from-blue-200 via-purple-200 to-pink-200 bg-clip-text text-transparent">
+                    <span className="px-2 sm:px-4 relative bg-gradient-to-r from-blue-200 via-purple-200 to-pink-200 bg-clip-text text-transparent">
                       Nicolas Calvelo
                     </span>
                   </span>
@@ -144,8 +144,8 @@ export default function SalonSpace() {
               </div>
 
               {/* Animated Subtitle */}
-              <div className="relative overflow-hidden pl-4">
-                <p className="text-2xl lg:text-4xl font-light bg-gradient-to-r from-blue-200 to-purple-200 bg-clip-text text-transparent">
+              <div className="relative overflow-hidden px-2 sm:pl-4">
+                <p className="text-lg sm:text-xl md:text-2xl lg:text-4xl font-light bg-gradient-to-r from-blue-200 to-purple-200 bg-clip-text text-transparent">
                   Développeur Web{" "}
                   <span className="relative">
                     <span className="absolute inset-0 bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent animate-ping">
@@ -159,7 +159,7 @@ export default function SalonSpace() {
               </div>
 
               {/* Info Cards with Hover Effects */}
-              <div className="space-y-6 pt-8">
+              <div className="space-y-4 sm:space-y-6 pt-6 sm:pt-8">
                 {[
                   { icon: "🗺️", text: "Rodez, Aveyron → Toulouse", color: "from-blue-500 to-cyan-500" },
                   {
@@ -171,32 +171,32 @@ export default function SalonSpace() {
                 ].map((item, index) => (
                   <div
                     key={index}
-                    className={`group relative p-4 rounded-2xl border border-white/20 backdrop-blur-sm 
+                    className={`group relative p-3 sm:p-4 rounded-xl sm:rounded-2xl border border-white/20 backdrop-blur-sm 
                       hover:scale-105 transition-all duration-300 cursor-pointer
                       bg-gradient-to-r ${item.color} bg-opacity-10 hover:bg-opacity-20`}
                     style={{ animationDelay: `${index * 200}ms` }}
                   >
-                    <Row className="justify-center lg:justify-start items-center space-x-4">
-                      <span className="text-3xl group-hover:scale-125 transition-transform duration-300">
+                    <Row className="justify-center lg:justify-start items-center space-x-3 sm:space-x-4">
+                      <span className="text-2xl sm:text-3xl group-hover:scale-125 transition-transform duration-300 flex-shrink-0">
                         {item.icon}
                       </span>
-                      <p className="text-xl font-medium text-white group-hover:text-yellow-300 transition-colors duration-300">
+                      <p className="text-base sm:text-lg lg:text-xl font-medium text-white group-hover:text-yellow-300 transition-colors duration-300 text-center lg:text-left">
                         {item.text}
                       </p>
                     </Row>
-                    <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-white/0 via-white/5 to-white/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    <div className="absolute inset-0 rounded-xl sm:rounded-2xl bg-gradient-to-r from-white/0 via-white/5 to-white/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   </div>
                 ))}
               </div>
 
               {/* CTA Section */}
-              <div className="pt-8 space-y-6">
-                <div className="relative p-6 rounded-3xl backdrop-blur-md border border-white/30 bg-gradient-to-br from-blue-900/30 to-purple-900/30">
-                  <h2 className="text-3xl font-bold mb-4 bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent">
+              <div className="pt-6 sm:pt-8 space-y-6">
+                <div className="relative p-4 sm:p-6 rounded-2xl sm:rounded-3xl backdrop-blur-md border border-white/30 bg-gradient-to-br from-blue-900/30 to-purple-900/30">
+                  <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-3 sm:mb-4 bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent">
                     🚀 Salon de l'Espace - 8 Août 2025
                   </h2>
-                  <p className="text-xl text-white/90 leading-relaxed">Créons ensemble le futur tech de Toulouse !</p>
-                  <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-yellow-400/10 to-orange-400/10 animate-pulse" />
+                  <p className="text-base sm:text-lg lg:text-xl text-white/90 leading-relaxed">Créons ensemble le futur tech de Toulouse !</p>
+                  <div className="absolute inset-0 rounded-2xl sm:rounded-3xl bg-gradient-to-r from-yellow-400/10 to-orange-400/10 animate-pulse" />
                 </div>
               </div>
             </Column>
@@ -204,16 +204,16 @@ export default function SalonSpace() {
 
           {/* Enhanced Photo Section */}
           <div
-            className={`flex-1 max-w-lg transition-all duration-1000 delay-300 ${
+            className={`flex-1 max-w-sm sm:max-w-md lg:max-w-lg w-full transition-all duration-1000 delay-300 ${
               isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-10"
             }`}
           >
-            <div className="relative group">
+            <div className="relative group mx-4 sm:mx-0">
               {/* Glowing Background */}
-              <div className="absolute -inset-4 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 rounded-3xl blur-xl opacity-30 group-hover:opacity-50 transition-opacity duration-500" />
+              <div className="absolute -inset-2 sm:-inset-4 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 rounded-2xl sm:rounded-3xl blur-xl opacity-30 group-hover:opacity-50 transition-opacity duration-500" />
 
               {/* Photo Container */}
-              <div className="relative h-96 lg:h-[600px] rounded-3xl overflow-hidden border-2 border-white/30 shadow-2xl backdrop-blur-sm">
+              <div className="relative h-64 sm:h-80 md:h-96 lg:h-[600px] rounded-2xl sm:rounded-3xl overflow-hidden border-2 border-white/30 shadow-2xl backdrop-blur-sm">
                 <img
                   src="/images/moi.jpg"
                   alt="Nicolas Calvelo - Développeur Web Fullstack"
@@ -223,12 +223,12 @@ export default function SalonSpace() {
                 {/* Hover Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
-                {/* Floating Tech Icons */}
-                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                {/* Floating Tech Icons - Hidden on small screens */}
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 hidden sm:block">
                   {["⚛️", "🔗", "🐘", "🚀"].map((icon, index) => (
                     <div
                       key={index}
-                      className="absolute text-2xl animate-bounce"
+                      className="absolute text-xl sm:text-2xl animate-bounce"
                       style={{
                         left: `${20 + index * 20}%`,
                         top: `${30 + index * 15}%`,
@@ -245,11 +245,11 @@ export default function SalonSpace() {
         </header>
 
         {/* Skills & Journey Section */}
-        <section className="py-32 px-4 relative">
+        <section className="py-16 sm:py-24 lg:py-32 px-4 sm:px-6 relative">
           <div className="max-w-7xl mx-auto">
             {/* Section Title */}
-            <div className="text-center mb-20">
-              <h2 className="text-5xl lg:text-7xl font-black mb-6">
+            <div className="text-center mb-12 sm:mb-16 lg:mb-20">
+              <h2 className="text-4xl sm:text-5xl lg:text-7xl font-black mb-4 sm:mb-6">
                 <span className="bg-gradient-to-r from-yellow-400 via-orange-400 to-red-400 bg-clip-text text-transparent">
                   Mon
                 </span>{" "}
@@ -257,16 +257,105 @@ export default function SalonSpace() {
                   Parcours
                 </span>
               </h2>
-              <div className="w-32 h-1 bg-gradient-to-r from-yellow-400 to-purple-400 mx-auto rounded-full" />
+              <div className="w-24 sm:w-32 h-1 bg-gradient-to-r from-yellow-400 to-purple-400 mx-auto rounded-full" />
             </div>
 
-            {/* Interactive Timeline */}
+            {/* Interactive Timeline - Mobile Optimized */}
             <div className="relative">
-              {/* Timeline Line */}
-              <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-blue-500 via-purple-500 to-pink-500 rounded-full" />
+              {/* Timeline Line - Hidden on mobile, simplified on tablet */}
+              <div className="hidden sm:block absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-blue-500 via-purple-500 to-pink-500 rounded-full" />
 
               {/* Timeline Items */}
-              <div className="space-y-32">
+              {/* Mobile Timeline - Simplified vertical layout */}
+              <div className="block sm:hidden space-y-8">
+                {[
+                  {
+                    year: "2022",
+                    src: "/images/2022.jpg",
+                    title: "🇦🇷 Le Grand Saut",
+                    subtitle: "D'Argentine vers la France",
+                    content:
+                      "Une aventure qui a commencé par un rêve : développer mes compétences tech en Europe. De Buenos Aires à Paris, puis Rodez, chaque étape m'a forgé.",
+                    color: "from-blue-500 to-cyan-500",
+                  },
+                  {
+                    year: "2023",
+                    src: "/images/2023.jpg",
+                    title: "🎓 ESGI Paris",
+                    subtitle: "Bac+3 en Ingénierie Web",
+                    content:
+                      "Formation intensive en développement web. Maîtrise de React, Symfony, et découverte de l'écosystème tech français. Une année transformatrice !",
+                    color: "from-purple-500 to-violet-500",
+                  },
+                  {
+                    year: "2024-2026",
+                    src: "/images/2024.jpg",
+                    title: "🚀 Master ESGI Toulouse",
+                    subtitle: "Vers l'expertise technique",
+                    content:
+                      "Approfondissement en architecture logicielle, DevOps, et innovation. En alternance pour allier théorie et pratique dans des projets concrets.",
+                    color: "from-green-500 to-emerald-500",
+                  },
+                  {
+                    year: "2026",
+                    src: "/images/toulouse.jpg",
+                    title: "🎯 Objectif Toulouse",
+                    subtitle: "Prêt pour de nouveaux défis",
+                    content:
+                      "Diplômé, expérimenté et passionné ! Prêt à rejoindre une équipe ambitieuse pour créer des solutions tech qui marquent.",
+                    color: "from-yellow-500 to-orange-500",
+                  },
+                ].map((item, index) => (
+                  <div key={index} className="relative pl-8">
+                    {/* Mobile Timeline Line */}
+                    <div className="absolute left-3 top-8 bottom-0 w-1 bg-gradient-to-b from-blue-500 via-purple-500 to-pink-500 rounded-full" />
+                    
+                    {/* Mobile Timeline Dot */}
+                    <div className={`absolute left-1 top-6 w-5 h-5 rounded-full border-3 border-white bg-gradient-to-r ${item.color} z-10`} />
+                    
+                    {/* Mobile Card */}
+                    <div
+                      className={`group relative p-6 rounded-3xl backdrop-blur-md border border-white/20 
+                      bg-gradient-to-br ${item.color} bg-opacity-10 hover:bg-opacity-20
+                      hover:scale-105 transition-all duration-500 cursor-pointer`}
+                    >
+                      {/* Year Badge */}
+                      <div className={`absolute -top-3 -right-3 bg-gradient-to-r ${item.color} px-3 py-1 rounded-full text-black font-bold text-sm`}>
+                        {item.year}
+                      </div>
+                      
+                      {/* Photo Space */}
+                      <div className="mb-4 rounded-2xl overflow-hidden border-2 border-white/20">
+                        <img
+                          src={item.src}
+                          alt={`Photo ${item.title}`}
+                          className="w-full h-48 object-cover bg-gradient-to-br from-gray-700 to-gray-800 hover:scale-105 transition-transform duration-500"
+                          onError={(e) => {
+                            e.target.style.display = "none";
+                            e.target.nextSibling.style.display = "flex";
+                          }}
+                        />
+                        {/* Placeholder when no image */}
+                        <div className="w-full h-48 bg-gradient-to-br from-gray-700 to-gray-800 items-center justify-center text-4xl opacity-50 hidden">
+                          📸
+                        </div>
+                      </div>
+                      
+                      <h3 className="text-xl font-bold mb-2 text-white group-hover:text-yellow-300 transition-colors duration-300">
+                        {item.title}
+                      </h3>
+                      <h4 className="text-base font-medium mb-3 text-gray-300">{item.subtitle}</h4>
+                      <p className="text-gray-200 text-sm leading-relaxed">{item.content}</p>
+                      
+                      {/* Hover Effect */}
+                      <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-white/0 via-white/5 to-white/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Desktop Timeline - Original layout */}
+              <div className="hidden sm:block space-y-16 lg:space-y-32">
                 {[
                   {
                     year: "2022",
@@ -329,7 +418,7 @@ export default function SalonSpace() {
                         {/* Photo Space */}
                         <div className="mb-6 rounded-2xl overflow-hidden border-2 border-white/20">
                           <img
-                            src={item.src} // À remplir plus tard
+                            src={item.src}
                             alt={`Photo ${item.title}`}
                             className="w-full h-64 object-cover bg-gradient-to-br from-gray-700 to-gray-800 hover:scale-105 transition-transform duration-500"
                             onError={(e) => {
@@ -341,7 +430,7 @@ export default function SalonSpace() {
                           <div className="w-full h-48 bg-gradient-to-br from-gray-700 to-gray-800 items-center justify-center text-6xl opacity-50 hidden">
                             📸
                           </div>
-                        </div>{" "}
+                        </div>
                         <h3 className="text-2xl font-bold mb-2 text-white group-hover:text-yellow-300 transition-colors duration-300">
                           {item.title}
                         </h3>
@@ -365,16 +454,42 @@ export default function SalonSpace() {
         </section>
 
         {/* Tech Stack Showcase */}
-        <section className="py-32 px-4 bg-gradient-to-r from-black/80 to-gray-900/80 backdrop-blur-sm">
+        <section className="py-16 sm:py-24 lg:py-32 px-4 sm:px-6 bg-gradient-to-r from-black/80 to-gray-900/80 backdrop-blur-sm">
           <div className="max-w-6xl mx-auto text-center">
-            <h2 className="text-5xl lg:text-6xl font-black mb-16">
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black mb-8 sm:mb-12 lg:mb-16">
               <span className="bg-gradient-to-r from-green-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">
                 Technologies
               </span>
             </h2>
 
-            {/* Floating Tech Icons */}
-            <div className="relative h-96 mb-16">
+            {/* Mobile Grid Layout */}
+            <div className="block sm:hidden mb-8">
+              <div className="grid grid-cols-2 gap-4">
+                {[
+                  { name: "React", icon: "⚛️", color: "from-blue-400 to-cyan-400" },
+                  { name: "Symfony", icon: "🎼", color: "from-purple-400 to-violet-400" },
+                  { name: "Node.js", icon: "🟢", color: "from-green-400 to-emerald-400" },
+                  { name: "NextJS", icon: "▲", color: "from-gray-400 to-slate-400" },
+                  { name: "Flutter", icon: "🦋", color: "from-blue-400 to-cyan-400" },
+                  { name: "MySQL", icon: "🗄️", color: "from-orange-400 to-red-400" },
+                  { name: "Git", icon: "🔀", color: "from-gray-400 to-gray-600" },
+                  { name: "Docker", icon: "🐳", color: "from-blue-500 to-cyan-500" }
+                ].map((tech, index) => (
+                  <div
+                    key={index}
+                    className={`group p-4 rounded-2xl backdrop-blur-md border border-white/30 
+                      bg-gradient-to-br ${tech.color} bg-opacity-20 hover:bg-opacity-40
+                      hover:scale-105 transition-all duration-500 cursor-pointer`}
+                  >
+                    <div className="text-3xl mb-2">{tech.icon}</div>
+                    <p className="text-xs font-semibold text-white">{tech.name}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Desktop Floating Layout */}
+            <div className="hidden sm:block relative h-64 md:h-80 lg:h-96 mb-8 sm:mb-12 lg:mb-16">
               {[
                 { name: "React", icon: "⚛️", color: "from-blue-400 to-cyan-400", delay: "0s" },
                 { name: "Symfony", icon: "🎼", color: "from-purple-400 to-violet-400", delay: "0.5s" },
@@ -433,10 +548,10 @@ export default function SalonSpace() {
         </section>
 
         {/* Passions Section */}
-        <section className="py-32 px-4 relative">
+        <section className="py-16 sm:py-24 lg:py-32 px-4 sm:px-6 relative">
           <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-20">
-              <h2 className="text-5xl lg:text-6xl font-black mb-6">
+            <div className="text-center mb-12 sm:mb-16 lg:mb-20">
+              <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black mb-4 sm:mb-6">
                 <span className="bg-gradient-to-r from-pink-400 via-purple-400 to-indigo-400 bg-clip-text text-transparent">
                   Mes
                 </span>{" "}
@@ -444,12 +559,12 @@ export default function SalonSpace() {
                   Passions
                 </span>
               </h2>
-              <p className="text-xl text-gray-300">Au-delà du code, ce qui me fait vibrer</p>
-              <div className="w-32 h-1 bg-gradient-to-r from-pink-400 to-yellow-400 mx-auto rounded-full mt-4" />
+              <p className="text-lg sm:text-xl text-gray-300">Au-delà du code, ce qui me fait vibrer</p>
+              <div className="w-24 sm:w-32 h-1 bg-gradient-to-r from-pink-400 to-yellow-400 mx-auto rounded-full mt-4" />
             </div>
 
             {/* Passion Cards */}
-            <div className="grid md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
               {[
                 {
                   title: "🥟 Cuisine Argentine",
@@ -668,7 +783,7 @@ export default function SalonSpace() {
 
             {/* Impact Statement */}
             <div className="relative p-12 rounded-3xl backdrop-blur-md border border-white/30 bg-gradient-to-br from-gray-900/50 to-black/50 mb-16">
-              <div className="absolute -inset-1 bg-gradient-to-r from-yellow-400 via-orange-400 to-red-400 rounded-3xl blur opacity-20 animate-pulse" />
+              <div className="absolute -inset-1 bg-gradient-to-r from-yellow-400 via-orange-400 to-red-400 rounded-3xl blur opacity-20" />
 
               <div className="relative space-y-8">
                 <div className="text-8xl mb-6">🎯</div>
