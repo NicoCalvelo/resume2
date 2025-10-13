@@ -112,11 +112,6 @@ export default function Header({}) {
             </svg>
             <p className="font-bold lg:text-lg">{moment().diff("2002-03-03", "years")} ans</p>
           </Row>
-          <div className="h-4" />
-          <GradientButton onClick={() => navigate("/salon-space")} hasIcon className="">
-            <span className="text-xl">🚀</span>
-            <span>Salon space Toulouse 2025</span>
-          </GradientButton>
         </Column>
       </Column>
     </header>

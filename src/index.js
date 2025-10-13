@@ -19,7 +19,7 @@ root.render(
         <Route path="/" element={<Home />} />
         <Route exact path="/recipes" element={<Dashboard />} />
         <Route path="/recipes/:id" element={<RecipesList />} />
-        <Route path="/salon-space" element={<SalonSpace />} />
+        {/* <Route path="/salon-space" element={<SalonSpace />} /> */}
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
