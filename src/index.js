@@ -9,7 +9,29 @@ import "./base/Providers/ConfirmationDialogsProvider";
 import HistoryProvider from "./providers/HistoryProvider";
 import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
 import { sendMessageToDiscord } from "./helpers/DiscordHelper";
-import SalonSpace from "./pages/salon-space/salon_space";
+
+const randomNames = [
+  "Edward",
+  "Sophia",
+  "Liam",
+  "Olivia",
+  "Noah",
+  "Ava",
+  "James",
+  "Isabella",
+  "Logan",
+  "Mia",
+  "Benjamin",
+  "Charlotte",
+  "Elijah",
+  "Amelia",
+  "Lucas",
+  "Harper",
+  "Mason",
+  "Evelyn",
+  "Ethan",
+  "Abigail",
+];
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -29,8 +51,17 @@ if (!window.location.origin.includes("localhost")) {
   const visitNumber = localStorage.getItem("visitNumber");
   localStorage.setItem("visitNumber", visitNumber ? parseInt(visitNumber) + 1 : 1);
 
+  // Générer ou récupérer un nom aléatoire pour l'utilisateur
+  let userName = localStorage.getItem("userName");
+  if (!userName) {
+    userName = randomNames[Math.floor(Math.random() * randomNames.length)];
+    localStorage.setItem("userName", userName);
+  }
+
   sendMessageToDiscord(
-    visitNumber ? "Vist number " + visitNumber + " on the website !" : "New visitor on the website!"
+    visitNumber 
+      ? `${userName} - Visit number ${visitNumber} on the website!` 
+      : `${userName} - New visitor on the website!`
   ).then((response) => {
     if (response.ok) {
       console.log("Message sent to Discord");
