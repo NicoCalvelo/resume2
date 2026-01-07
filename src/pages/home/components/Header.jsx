@@ -15,14 +15,14 @@ const techBadges = [
 export default function Header({}) {
   return (
     <header
-      className="flex flex-col lg:flex-row h-screen lg:justify-center lg:space-x-10 p-6 lg:p-10 items-center"
+      className="flex flex-col lg:flex-row h-fit lg:justify-center lg:space-x-10 p-6 lg:p-10 items-center"
       role="banner"
     >
       <Transition
         as="div"
         appear
         show={true}
-        className="relative h-3/4 flex-shrink-0 max-w-sm lg:h-4/5 p-5 lg:mx-10 lg:p-4"
+        className="relative h-[400px] flex-shrink-0 max-w-sm lg:h-[550px] p-3 lg:mx-10 lg:p-4"
       >
         <TransitionChild
           as="div"
@@ -39,7 +39,7 @@ export default function Header({}) {
         </TransitionChild>
         <TransitionChild
           as="div"
-          className="h-1/3 absolute bottom-2 -right-4 lg:-right-16"
+          className="h-2/5 absolute -bottom-4 -right-4 lg:-right-16"
           enter="transition-all transform duration-1000 ease-out delay-300"
           enterFrom="opacity-0 translate-x-10"
           enterTo="opacity-100 translate-x-0"
@@ -52,7 +52,7 @@ export default function Header({}) {
         </TransitionChild>
         <TransitionChild
           as="div"
-          className="h-1/4 absolute top-2 right-2 lg:-top-4 lg:-right-10"
+          className="h-1/4 absolute -top-5 -right-2 lg:-top-4 lg:-right-10"
           enter="transition-all transform duration-1000 ease-out delay-700"
           enterFrom="opacity-0 -translate-y-10"
           enterTo="opacity-100 translate-y-0"
@@ -78,7 +78,7 @@ export default function Header({}) {
         </TransitionChild>
       </Transition>
 
-      <Column className="p-5 pt-10 lg:pt-2 w-full lg:w-fit space-y-4 lg:space-y-6 max-w-2xl">
+      <Column className="p-5 pt-2 w-full lg:w-fit space-y-4 lg:space-y-6 max-w-2xl">
         {/* Name & Title */}
         <Column className="space-y-3">
           <h1 className="text-5xl pl-1 lg:text-7xl font-medium bg-gradient-to-r from-blue-500 to-purple-400 bg-clip-text text-transparent">
